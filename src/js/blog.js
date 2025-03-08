@@ -61,13 +61,13 @@ function initBlogAnimations() {
 
 function initMobileNav() {
     const hamburger = document.querySelector('.hamburger');
-    const navLinksContainer = document.querySelector('.nav-links-container');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelectorAll('.mobile-nav-links a');
 
     function toggleMenu() {
         hamburger.classList.toggle('active');
-        navLinksContainer.classList.toggle('active');
-        document.body.style.overflow = navLinksContainer.classList.contains('active') ? 'hidden' : '';
+        mobileMenu.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
     }
 
     // Hamburger click event
@@ -78,10 +78,10 @@ function initMobileNav() {
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-        const isClickInsideNav = navLinksContainer.contains(e.target);
+        const isClickInsideMenu = mobileMenu.contains(e.target);
         const isClickOnHamburger = hamburger.contains(e.target);
         
-        if (!isClickInsideNav && !isClickOnHamburger && navLinksContainer.classList.contains('active')) {
+        if (!isClickInsideMenu && !isClickOnHamburger && mobileMenu.classList.contains('active')) {
             toggleMenu();
         }
     });
@@ -89,14 +89,14 @@ function initMobileNav() {
     // Close menu when clicking on nav links
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            if (navLinksContainer.classList.contains('active')) {
+            if (mobileMenu.classList.contains('active')) {
                 toggleMenu();
             }
         });
     });
 
-    // Prevent clicks inside nav container from closing the menu
-    navLinksContainer.addEventListener('click', (e) => {
+    // Prevent clicks inside mobile menu from closing it
+    mobileMenu.addEventListener('click', (e) => {
         e.stopPropagation();
     });
 }
@@ -125,8 +125,8 @@ function updateLanguage(lang) {
 
     const t = translations[lang];
     
-    // Update navigation links
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    // Update all navigation links (both desktop and mobile)
+    document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach(link => {
         const key = link.getAttribute('href').split('#')[1] || 'blog';
         if (t[key.toLowerCase()]) {
             link.textContent = t[key.toLowerCase()];
