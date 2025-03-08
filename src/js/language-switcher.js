@@ -81,6 +81,12 @@ export class LanguageSwitcher {
         overviewCard.querySelector('h3').textContent = translations[lang].features.overview.title;
         overviewCard.querySelector('p').textContent = translations[lang].features.overview.description;
 
+        // Update about section images
+        const mainAboutImg = document.querySelector('.about-img.main-img');
+        const secondaryAboutImg = document.querySelector('.about-img.secondary-img');
+        if (mainAboutImg) mainAboutImg.src = translations[lang].about.mainImage;
+        if (secondaryAboutImg) secondaryAboutImg.src = translations[lang].about.secondaryImage;
+
         // Update footer
         const contactInfo = document.querySelector('.contact-info');
         contactInfo.querySelector('p:nth-child(1)').textContent = translations[lang].footer.address;
