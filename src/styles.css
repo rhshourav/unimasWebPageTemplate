@@ -15,6 +15,7 @@
     --accent: #F3F4F6;
     --text: #374151;
     --transition: all 0.3s ease;
+    --company-name-color: #ff0000;
 }
 
 * {
@@ -68,9 +69,9 @@ body {
 }
 
 .factory-name {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #E31E24;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--company-name-color);
     letter-spacing: 0.5px;
     font-family: 'NumbusBold', sans-serif;
 }

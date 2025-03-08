@@ -3,6 +3,7 @@
     --blog-accent: #ff6b6b;
     --blog-card-bg: rgba(255, 255, 255, 0.1);
     --blog-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --company-name-color: #ff0000;
 }
 
 /* Navigation Styles */
@@ -44,7 +45,7 @@
 .factory-name {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--text);
+    color: var(--company-name-color);
 }
 
 .logo-text {
