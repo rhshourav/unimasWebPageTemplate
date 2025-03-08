@@ -9,7 +9,7 @@ export const translations = {
             contact: 'CONTACT'
         },
         hero: {
-            since: 'Since 1999',
+            since: 'Since 2014',
             companyName: 'Unimas Sportswear Ltd.',
             subsidiary: 'subsidiary of',
             parentCompany: 'Mainland Holdings Ltd.',
@@ -43,7 +43,7 @@ export const translations = {
             contact: '联系我们'
         },
         hero: {
-            since: '始于1999',
+            since: '始于2014',
             companyName: 'Unimas Sportswear Ltd.',
             subsidiary: '附属于',
             parentCompany: 'Mainland Holdings Ltd.',
