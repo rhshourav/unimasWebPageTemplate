@@ -57,7 +57,11 @@ export class LanguageSwitcher {
         });
 
         // Update hero section
-        document.querySelector('.since').textContent = translations[lang].hero.since;
+        const sinceElement = document.querySelector('.since');
+        sinceElement.innerHTML = `
+            <img src="img/titleLogo.svg" alt="Title Logo" class="since-logo">
+            ${translations[lang].hero.since}
+        `;
         document.querySelector('.company-name').textContent = translations[lang].hero.companyName;
         document.querySelector('.subsidiary').textContent = translations[lang].hero.subsidiary;
         document.querySelector('.parent-company').textContent = translations[lang].hero.parentCompany;
