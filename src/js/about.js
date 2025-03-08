@@ -31,8 +31,10 @@ export class AboutSection {
 
 class ImageSlideshow {
     constructor() {
-        this.currentImageIndex = 0;
-        this.intervalId = null;
+        this.mainImageIndex = 0;
+        this.secondaryImageIndex = 0;
+        this.mainIntervalId = null;
+        this.secondaryIntervalId = null;
         this.init();
     }
 
@@ -41,21 +43,24 @@ class ImageSlideshow {
     }
 
     startSlideshow() {
-        // Clear any existing interval
-        if (this.intervalId) {
-            clearInterval(this.intervalId);
+        // Clear any existing intervals
+        if (this.mainIntervalId) {
+            clearInterval(this.mainIntervalId);
+        }
+        if (this.secondaryIntervalId) {
+            clearInterval(this.secondaryIntervalId);
         }
 
-        // Start new interval
-        this.intervalId = setInterval(() => {
+        // Start main image interval
+        this.mainIntervalId = setInterval(() => {
             const mainImg = document.querySelector('.about-img.main-img');
             if (!mainImg) return;
 
-            this.currentImageIndex = (this.currentImageIndex + 1) % imageConfigs.about.images.length;
+            this.mainImageIndex = (this.mainImageIndex + 1) % imageConfigs.about.images.length;
             
             // Create new image element
             const newImage = new Image();
-            newImage.src = imageConfigs.about.images[this.currentImageIndex];
+            newImage.src = imageConfigs.about.images[this.mainImageIndex];
             
             // Add fade-out class to current image
             mainImg.classList.add('fade-out');
@@ -67,24 +72,49 @@ class ImageSlideshow {
                 mainImg.classList.remove('fade-out');
             }, 500); // Match this with CSS transition duration
         }, 5000); // Change image every 5 seconds
+
+        // Start secondary image interval with offset
+        setTimeout(() => {
+            this.secondaryIntervalId = setInterval(() => {
+                const secondaryImg = document.querySelector('.about-img.secondary-img');
+                if (!secondaryImg) return;
+
+                this.secondaryImageIndex = (this.secondaryImageIndex + 1) % imageConfigs.about.secondaryImages.length;
+                
+                // Create new image element
+                const newImage = new Image();
+                newImage.src = imageConfigs.about.secondaryImages[this.secondaryImageIndex];
+                
+                // Add fade-out class to current image
+                secondaryImg.classList.add('fade-out');
+                
+                // Wait for fade out animation
+                setTimeout(() => {
+                    // Update source and remove fade-out class
+                    secondaryImg.src = newImage.src;
+                    secondaryImg.classList.remove('fade-out');
+                }, 500); // Match this with CSS transition duration
+            }, 5000); // Change image every 5 seconds
+        }, 2500); // Start with 2.5s offset for better visual effect
     }
 
     updateLanguage(lang) {
-        this.currentImageIndex = 0;
+        this.mainImageIndex = 0;
+        this.secondaryImageIndex = 0;
         
-        // Update current image immediately
+        // Update current images immediately
         const mainImg = document.querySelector('.about-img.main-img');
         const secondaryImg = document.querySelector('.about-img.secondary-img');
         
         if (mainImg) {
-            mainImg.src = imageConfigs.about.images[this.currentImageIndex];
+            mainImg.src = imageConfigs.about.images[this.mainImageIndex];
         }
         
         if (secondaryImg) {
-            secondaryImg.src = imageConfigs.about.secondaryImage;
+            secondaryImg.src = imageConfigs.about.secondaryImages[this.secondaryImageIndex];
         }
         
-        // Restart slideshow with new language
+        // Restart slideshow
         this.startSlideshow();
     }
 } 

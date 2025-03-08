@@ -6,6 +6,11 @@ export const imageConfigs = {
             'img/about-4.jpg',
             'img/about-5.jpg'
         ],
-        secondaryImage: 'img/about-2.jpg'
+        secondaryImages: [
+            'img/about-2.jpg',
+            'img/about-6.jpg',
+            'img/about-7.jpg',
+            'img/about-8.jpg'
+        ]
     }
 }; 
