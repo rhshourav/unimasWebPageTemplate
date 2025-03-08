@@ -1,5 +1,5 @@
 import { translations } from './translations.js';
-import { imageConfigs } from './image-config.js';
+import { imageConfigs } from './about-image-config.js';
 
 export class AboutSection {
     constructor() {
