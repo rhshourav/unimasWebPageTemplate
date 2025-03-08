@@ -5,6 +5,43 @@
     --blog-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
+/* Theme Transitions */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+    --blog-card-bg: rgba(30, 30, 30, 0.5);
+    --blog-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .blog-date {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+[data-theme="dark"] .decorative-wave,
+[data-theme="dark"] .decorative-squares {
+    opacity: 0.03;
+}
+
+[data-theme="dark"] .nav-links a {
+    color: var(--text);
+}
+
+[data-theme="dark"] .nav-links a:hover,
+[data-theme="dark"] .nav-links a.active {
+    color: #FF0000;
+}
+
+[data-theme="dark"] .lang-btn {
+    color: var(--text);
+}
+
+[data-theme="dark"] .theme-toggle {
+    color: var(--text);
+}
+
 /* Navigation Bar Adjustments */
 .header {
     position: fixed;

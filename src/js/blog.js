@@ -1,8 +1,49 @@
 // Blog Page Functionality
+import { ThemeManager } from './theme-manager.js';
+import { LanguageSwitcher } from './language-switcher.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     initBlogAnimations();
-    initThemeSupport();
+    initThemeAndLanguage();
 });
+
+function initThemeAndLanguage() {
+    // Initialize theme manager
+    const themeManager = new ThemeManager();
+    themeManager.init();
+
+    // Initialize language switcher
+    const languageSwitcher = new LanguageSwitcher();
+    languageSwitcher.init();
+
+    // Update active states for language buttons
+    const langButtons = document.querySelectorAll('.lang-btn');
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.textContent.toLowerCase() === 'en' ? 'en' : 'zh';
+            langButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            languageSwitcher.switchLanguage(lang);
+        });
+    });
+
+    // Theme toggle functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    themeToggle.addEventListener('click', () => {
+        themeManager.toggleTheme();
+        updateThemeIcon();
+    });
+
+    // Initial theme icon state
+    updateThemeIcon();
+}
+
+function updateThemeIcon() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const moonIcon = document.querySelector('.moon-icon');
+    moonIcon.style.transform = isDark ? 'rotate(180deg)' : 'rotate(0deg)';
+    moonIcon.style.transition = 'transform 0.3s ease';
+}
 
 function initBlogAnimations() {
     // Intersection Observer for fade-in animations
@@ -40,26 +81,6 @@ function initBlogAnimations() {
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-    `;
-    document.head.appendChild(style);
-}
-
-function initThemeSupport() {
-    // Add theme-specific styles
-    const style = document.createElement('style');
-    style.textContent = `
-        [data-theme="dark"] .blog-card {
-            background: rgba(30, 30, 30, 0.5);
-        }
-
-        [data-theme="dark"] .blog-date {
-            background: rgba(0, 0, 0, 0.9);
-        }
-
-        [data-theme="dark"] .decorative-wave,
-        [data-theme="dark"] .decorative-squares {
-            opacity: 0.03;
         }
     `;
     document.head.appendChild(style);
