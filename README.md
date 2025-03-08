@@ -135,7 +135,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Contact
 
 Unimas Sportswear Ltd.
-- Email: support@domain.com
+- Email: shourav.it@mainland-bd.com
 - Location: Bagbari Kashimpur, Gazipur, Bangladesh
 
 ## Acknowledgments
