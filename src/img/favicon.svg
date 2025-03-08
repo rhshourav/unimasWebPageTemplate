@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="32" height="32" rx="6" fill="#E31E24"/>
+    
+    <!-- Letter U -->
+    <path d="M8 8V18C8 21.3137 10.6863 24 14 24H18C21.3137 24 24 21.3137 24 18V8"
+          stroke="white"
+          stroke-width="3"
+          stroke-linecap="round"/>
+</svg> 

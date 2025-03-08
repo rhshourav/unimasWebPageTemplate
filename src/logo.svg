@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="100" viewBox="0 0 300 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Modern abstract shape -->
+    <path d="M20 20L80 20C85.5228 20 90 24.4772 90 30V70C90 75.5228 85.5228 80 80 80H20C14.4772 80 10 75.5228 10 70V30C10 24.4772 14.4772 20 20 20Z" 
+          fill="#10B981"/>
+    
+    <!-- Stylized G -->
+    <path d="M65 50C65 59.9411 56.9411 68 47 68C37.0589 68 29 59.9411 29 50C29 40.0589 37.0589 32 47 32C52.5228 32 57.4672 34.6146 60.5 38.5" 
+          stroke="white" 
+          stroke-width="6" 
+          stroke-linecap="round"/>
+    <path d="M60.5 45V38.5H54" 
+          stroke="white" 
+          stroke-width="6" 
+          stroke-linecap="round"/>
+    
+    <!-- Modern text -->
+    <text x="110" y="55" font-family="Poppins, sans-serif" font-size="28" font-weight="600" fill="#1F2937">Textilery</text>
+    <text x="110" y="75" font-family="Poppins, sans-serif" font-size="14" font-weight="400" fill="#6B7280">Modern Textile Solutions</text>
+</svg> 

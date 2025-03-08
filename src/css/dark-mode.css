@@ -1,0 +1,115 @@
+/* Dark mode variables */
+:root[data-theme="dark"] {
+    --primary: #E2E8F0;
+    --secondary: #10B981;
+    --accent: #1F2937;
+    --text: #F3F4F6;
+    --bg-primary: #111827;
+    --bg-secondary: #1F2937;
+    --bg-transparent: #0a0e27;
+    --bg-transparent-light: rgba(31, 41, 55, 0.9);
+}
+
+/* Dark mode specific styles */
+[data-theme="dark"] {
+    background-color: var(--bg-primary);
+}
+
+[data-theme="dark"] .header {
+    background: var(--bg-transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(227, 30, 36, 0.1);
+}
+
+[data-theme="dark"] .nav-links a {
+    color: #fff;
+}
+
+[data-theme="dark"] .nav-links a:hover {
+    color: #E31E24;
+}
+
+[data-theme="dark"] .nav-links a::after {
+    background-color: #E31E24;
+}
+
+[data-theme="dark"] .logo-text {
+    color: #fff;
+}
+
+[data-theme="dark"] .hamburger span {
+    background: #fff;
+}
+
+[data-theme="dark"] .nav-container {
+    background: var(--bg-transparent);
+}
+
+[data-theme="dark"] .nav-controls {
+    border-color: rgba(227, 30, 36, 0.2);
+}
+
+[data-theme="dark"] .hero-content {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .hero-content p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .company-name {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .parent-company {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .feature-card {
+    background: var(--bg-secondary);
+    color: var(--text);
+}
+
+[data-theme="dark"] .feature-card h3 {
+    color: var(--text);
+}
+
+[data-theme="dark"] .feature-card p {
+    color: var(--text);
+    opacity: 0.8;
+}
+
+[data-theme="dark"] .language-switcher {
+    background: rgba(227, 30, 36, 0.1);
+    border: 1px solid rgba(227, 30, 36, 0.2);
+}
+
+[data-theme="dark"] .language-btn {
+    color: #fff;
+}
+
+[data-theme="dark"] .language-btn.active {
+    background: #E31E24;
+    color: #fff;
+}
+
+[data-theme="dark"] .language-btn:hover:not(.active) {
+    background: rgba(227, 30, 36, 0.2);
+}
+
+@media (max-width: 768px) {
+    [data-theme="dark"] .nav-container {
+        background: var(--bg-transparent);
+    }
+    
+    [data-theme="dark"] .nav-controls {
+        background: transparent;
+    }
+    
+    [data-theme="dark"] .language-switcher {
+        background: rgba(227, 30, 36, 0.1);
+        border: 1px solid rgba(227, 30, 36, 0.2);
+    }
+} 

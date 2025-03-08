@@ -1,0 +1,17 @@
+{
+  "name": "Unimas_Web_Page",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Modern website with eye-pleasing colors and effects",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
