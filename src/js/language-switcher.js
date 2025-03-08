@@ -79,7 +79,8 @@ export class LanguageSwitcher {
 
         // Update footer
         const contactInfo = document.querySelector('.contact-info');
-        contactInfo.querySelector('p:first-child').textContent = translations[lang].footer.address;
-        contactInfo.querySelector('p:last-child').textContent = translations[lang].footer.email;
+        contactInfo.querySelector('p:nth-child(1)').textContent = translations[lang].footer.address;
+        contactInfo.querySelector('p:nth-child(2)').textContent = translations[lang].footer.district;
+        contactInfo.querySelector('p:nth-child(3)').textContent = translations[lang].footer.email;
     }
 } 

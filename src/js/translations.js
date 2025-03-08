@@ -28,7 +28,8 @@ export const translations = {
             }
         },
         footer: {
-            address: '📍 Jl. Sunset Road No.815, Kuta, Bali 80361',
+            address: '📍 Bagbari, Kashimpur, Gazipur-1700',
+            district: 'Dhaka, Bangladesh',
             email: '📧 support@domain.com'
         }
     },
@@ -61,7 +62,8 @@ export const translations = {
             }
         },
         footer: {
-            address: '📍 巴厘岛库塔日落路815号，80361',
+            address: '📍 Bagbari, Kashimpur, Gazipur-1700',
+            district: 'Dhaka, Bangladesh',
             email: '📧 support@domain.com'
         }
     }
