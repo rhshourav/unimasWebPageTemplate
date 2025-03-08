@@ -49,11 +49,24 @@ A modern, responsive website for Unimas Sportswear Ltd., a leading cap manufactu
 unimasWebPageTemplate/
 ├── src/
 │   ├── index.html
+│   ├── about.html
+│   ├── more-about.html
 │   ├── styles.css
 │   ├── script.js
+│   ├── css/
+│   │   ├── about.css
+│   │   └── more-about.css
+│   ├── js/
+│   │   ├── about.js
+│   │   ├── more-about.js
+│   │   ├── theme-manager.js
+│   │   ├── language-switcher.js
+│   │   └── load-sections.js
 │   └── img/
 │       ├── comLogo.svg
 │       ├── titleLogo.svg
+│       ├── facility-*.jpg
+│       ├── about-*.jpg
 │       └── ...
 └── README.md
 ```
@@ -73,6 +86,39 @@ unimasWebPageTemplate/
 - Projects gallery
 - Blog section
 - Contact information
+- Detailed "More About Us" page with:
+  - Company overview with mission and vision
+  - Facilities showcase with interactive cards
+  - Certifications display
+  - Sustainability commitment
+  - Leadership team profiles
+  - Decorative elements and animations
+
+### More About Us Page Features
+- Responsive hero section with background image
+- Interactive mission and vision cards
+- Facility cards with hover effects
+- Certification showcase with animations
+- Sustainability initiatives with checkmark list
+- Team member profiles with circular images
+- Decorative patterns and fillers
+- Dark/Light theme support
+- Mobile-optimized layout
+- Smooth scroll animations
+- Intersection Observer for fade-in effects
+
+### Theme Support
+- Light and dark mode across all pages
+- Theme-aware decorative elements
+- Smooth theme transitions
+- Persistent theme preference
+
+### Animations and Effects
+- Fade-in animations on scroll
+- Interactive hover effects
+- Smooth transitions
+- Decorative patterns and shapes
+- Mobile-responsive animations
 
 ## Contributing
 
