@@ -173,12 +173,15 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 25px;
     font-size: 0.9rem;
+    color: white;
 }
 
 .since-logo {
     height: 18px;
     width: auto;
-    filter: none;
+    filter: brightness(0) invert(1);
+    display: flex;
+    align-items: center;
 }
 
 .hero h1 {
@@ -559,12 +562,15 @@ body {
     .since {
         font-size: 0.8rem;
         padding: 0.4rem 0.8rem;
+        color: white;
     }
 
     .since-logo {
         height: 16px;
         width: auto;
-        filter: none;
+        filter: brightness(0) invert(1);
+        display: flex;
+        align-items: center;
     }
 
     .hero h1 {
