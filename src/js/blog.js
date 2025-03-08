@@ -1,9 +1,17 @@
 // Blog Page Functionality
 document.addEventListener('DOMContentLoaded', () => {
     initBlogAnimations();
-    initThemeSupport();
     initMobileNav();
-    initLanguageSwitcher();
+    
+    // Initialize theme and language support
+    const themeManager = new ThemeManager();
+    const languageSwitcher = new LanguageSwitcher();
+    
+    // Initialize language based on stored preference
+    const storedLang = localStorage.getItem('language');
+    if (storedLang) {
+        updateLanguage(storedLang);
+    }
 });
 
 function initBlogAnimations() {
@@ -47,45 +55,45 @@ function initBlogAnimations() {
     document.head.appendChild(style);
 }
 
-function initThemeSupport() {
-    const themeToggle = document.querySelector('.theme-toggle');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    const currentTheme = localStorage.getItem('theme');
+function initMobileNav() {
+    const hamburger = document.querySelector('.hamburger');
+    const navContainer = document.querySelector('.nav-container');
+    const navLinks = document.querySelectorAll('.nav-links a');
 
-    if (currentTheme === 'dark') {
-        document.body.setAttribute('data-theme', 'dark');
-    } else if (currentTheme === 'light') {
-        document.body.setAttribute('data-theme', 'light');
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        navContainer.classList.toggle('active');
+        document.body.style.overflow = navContainer.classList.contains('active') ? 'hidden' : '';
     }
 
-    themeToggle?.addEventListener('click', () => {
-        let theme = 'light';
-        if (document.body.getAttribute('data-theme') !== 'dark') {
-            document.body.setAttribute('data-theme', 'dark');
-            theme = 'dark';
-        } else {
-            document.body.setAttribute('data-theme', 'light');
-        }
-        localStorage.setItem('theme', theme);
+    // Hamburger click event
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
     });
-}
 
-function initLanguageSwitcher() {
-    const languageBtns = document.querySelectorAll('.language-btn');
-    const currentLang = localStorage.getItem('language') || 'en';
-
-    languageBtns.forEach(btn => {
-        if (btn.getAttribute('data-lang') === currentLang) {
-            btn.classList.add('active');
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        const isClickInsideNav = navContainer.contains(e.target);
+        const isClickOnHamburger = hamburger.contains(e.target);
+        
+        if (!isClickInsideNav && !isClickOnHamburger && navContainer.classList.contains('active')) {
+            toggleMenu();
         }
+    });
 
-        btn.addEventListener('click', () => {
-            const lang = btn.getAttribute('data-lang');
-            languageBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            localStorage.setItem('language', lang);
-            updateLanguage(lang);
+    // Close menu when clicking on nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navContainer.classList.contains('active')) {
+                toggleMenu();
+            }
         });
+    });
+
+    // Prevent clicks inside nav container from closing the menu
+    navContainer.addEventListener('click', (e) => {
+        e.stopPropagation();
     });
 }
 
@@ -126,41 +134,6 @@ function updateLanguage(lang) {
     const heroText = document.querySelector('.blog-hero p');
     if (heroTitle) heroTitle.textContent = t.latestNews;
     if (heroText) heroText.textContent = t.stayUpdated;
-}
-
-function initMobileNav() {
-    const hamburger = document.querySelector('.hamburger');
-    const navContainer = document.querySelector('.nav-container');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    hamburger?.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navContainer?.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!hamburger?.contains(e.target) && 
-            !navContainer?.contains(e.target) && 
-            navContainer?.classList.contains('active')) {
-            hamburger?.classList.remove('active');
-            navContainer?.classList.remove('active');
-        }
-    });
-
-    // Close mobile menu when clicking a link
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger?.classList.remove('active');
-            navContainer?.classList.remove('active');
-        });
-    });
-}
-
-// Initialize language based on stored preference
-const storedLang = localStorage.getItem('language');
-if (storedLang) {
-    updateLanguage(storedLang);
 }
 
 // Add smooth scroll behavior for anchor links
