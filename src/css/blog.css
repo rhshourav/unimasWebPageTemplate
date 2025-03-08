@@ -1,3 +1,22 @@
+/*
+TODO: Navigation Improvements Needed:
+1. Fix navigation dock positioning:
+   - Ensure proper z-index layering
+   - Fix backdrop-filter behavior
+   - Improve scroll behavior
+
+2. Fix navigation bar layout:
+   - Adjust spacing between nav items
+   - Improve mobile breakpoint behavior
+   - Fix alignment with logo
+
+3. Mobile menu improvements:
+   - Fix hamburger menu positioning
+   - Improve mobile menu animation
+   - Fix mobile menu overlay
+   - Ensure proper touch interaction
+*/
+
 /* Blog Styles with Theme Support */
 :root {
     /* Light Theme Variables */
