@@ -1,16 +1,16 @@
 export const imageConfigs = {
     about: {
         images: [
-            'img/about-1.png',
-            'img/about-3.jpg',
-            'img/about-4.jpg',
-            'img/about-5.jpg'
+            'img/about1-1.png',
+            'img/about1-2.jpg',
+            'img/about1-3.jpg',
+            'img/about1-4.jpg'
         ],
         secondaryImages: [
-            'img/about-2.jpg',
-            'img/about-6.jpg',
-            'img/about-7.jpg',
-            'img/about-8.jpg'
+            'img/about2-1.jpg',
+            'img/about2-2.jpg',
+            'img/about2-3.jpg',
+            'img/about2-4.jpg'
         ]
     }
 }; 
