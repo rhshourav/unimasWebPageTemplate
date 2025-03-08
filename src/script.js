@@ -2,6 +2,10 @@ import { BackgroundSlider } from './js/slider.js';
 import { LanguageSwitcher } from './js/language-switcher.js';
 import { ThemeManager } from './js/theme-manager.js';
 import { AboutSection } from './js/about.js';
+import { SectionLoader } from './js/load-sections.js';
+
+// Load about section
+await SectionLoader.loadSection('about-section', 'about.html');
 
 // Initialize theme manager
 new ThemeManager();
