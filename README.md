@@ -1,124 +1,86 @@
 # Unimas Sportswear Ltd. Website
 
-A modern, responsive website for Unimas Sportswear Ltd., a leading cap manufacturing factory in Bangladesh. This website showcases the company's products, services, and commitment to quality in the global headwear industry.
+A modern, responsive website for Unimas Sportswear Ltd., featuring a dynamic blog section, dark mode support, and multilingual capabilities.
 
 ## Features
 
-- 🎨 Modern and responsive design
-- 🌓 Dark/Light theme toggle
-- 🌐 Multi-language support (English and Chinese)
-- 📱 Mobile-friendly navigation with hamburger menu
-- 🎥 Video showcase functionality
-- ⚡ Fast loading and optimized performance
-- 🖼️ Dynamic image galleries and sliders
+- 🌓 Dark/Light Mode Toggle
+- 🌐 Multilingual Support (English/Chinese)
+- 📱 Responsive Design
+- 🎨 Modern UI/UX
+- 🚀 Performance Optimized
+- 📝 Dynamic Blog Section
 
-## Technologies Used
+## Pages
+
+- **Home**: Company introduction and overview
+- **About**: Company history and values
+- **Projects**: Showcase of our work
+- **Blog**: Latest news and updates
+- **Contact**: Get in touch information
+
+## Technical Stack
 
 - HTML5
-- CSS3
+- CSS3 (Custom variables, Flexbox, Grid)
 - JavaScript (ES6+)
-- Google Fonts (Poppins)
-- SVG icons for better scalability
-- Responsive design principles
+- Modular Architecture
+- Responsive Images
+- CSS Animations
 
-## Getting Started
+## Recent Updates
 
-### Prerequisites
+### Navigation Improvements (In Progress)
+1. Navigation Dock Positioning:
+   - Enhanced z-index layering
+   - Improved backdrop-filter behavior
+   - Smooth scroll behavior
 
-- A modern web browser
-- Basic knowledge of web development
-- A code editor (VS Code, Sublime Text, etc.)
+2. Navigation Bar Layout:
+   - Optimized spacing between nav items
+   - Enhanced mobile breakpoint behavior
+   - Improved logo alignment
 
-### Installation
+3. Mobile Menu:
+   - Fixed hamburger menu positioning
+   - Smooth mobile menu animations
+   - Enhanced mobile menu overlay
+   - Improved touch interactions
+
+### Dark Mode Enhancements
+- Added comprehensive theme variables
+- Improved contrast and readability
+- Enhanced component transitions
+- Fixed mobile menu dark mode styles
+
+## Setup and Development
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/unimasWebPageTemplate.git
-   ```
+```bash
+git clone https://github.com/rhshourav/unimasWebPageTemplate.git
+```
 
 2. Navigate to the project directory:
-   ```bash
-   cd unimasWebPageTemplate
-   ```
-
-3. Open `src/index.html` in your web browser or use a local development server.
-
-## Project Structure
-
-```
-unimasWebPageTemplate/
-├── src/
-│   ├── index.html
-│   ├── about.html
-│   ├── more-about.html
-│   ├── styles.css
-│   ├── script.js
-│   ├── css/
-│   │   ├── about.css
-│   │   └── more-about.css
-│   ├── js/
-│   │   ├── about.js
-│   │   ├── more-about.js
-│   │   ├── theme-manager.js
-│   │   ├── language-switcher.js
-│   │   └── load-sections.js
-│   └── img/
-│       ├── comLogo.svg
-│       ├── titleLogo.svg
-│       ├── facility-*.jpg
-│       ├── about-*.jpg
-│       └── ...
-└── README.md
+```bash
+cd unimasWebPageTemplate
 ```
 
-## Features in Detail
+3. Open `index.html` in your browser or use a local server:
+```bash
+# Using Python
+python -m http.server 8000
 
-### Navigation
-- Responsive navigation bar
-- Smooth scrolling to sections
-- Language switcher (EN/中文)
-- Dark/Light theme toggle
+# Using Node.js
+npx serve
+```
 
-### Sections
-- Hero section with animated text and video button
-- About section with company statistics
-- Features showcase
-- Projects gallery
-- Blog section
-- Contact information
-- Detailed "More About Us" page with:
-  - Company overview with mission and vision
-  - Facilities showcase with interactive cards
-  - Certifications display
-  - Sustainability commitment
-  - Leadership team profiles
-  - Decorative elements and animations
+## Browser Support
 
-### More About Us Page Features
-- Responsive hero section with background image
-- Interactive mission and vision cards
-- Facility cards with hover effects
-- Certification showcase with animations
-- Sustainability initiatives with checkmark list
-- Team member profiles with circular images
-- Decorative patterns and fillers
-- Dark/Light theme support
-- Mobile-optimized layout
-- Smooth scroll animations
-- Intersection Observer for fade-in effects
-
-### Theme Support
-- Light and dark mode across all pages
-- Theme-aware decorative elements
-- Smooth theme transitions
-- Persistent theme preference
-
-### Animations and Effects
-- Fade-in animations on scroll
-- Interactive hover effects
-- Smooth transitions
-- Decorative patterns and shapes
-- Mobile-responsive animations
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS/Android)
 
 ## Contributing
 
@@ -128,18 +90,18 @@ unimasWebPageTemplate/
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+## Known Issues
+
+- Navigation improvements in progress (see TODO comments in `src/css/blog.css`)
+- Mobile menu animation refinements needed
+- Dark mode transition improvements planned
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Contact
 
-Unimas Sportswear Ltd.
 - Email: shourav.it@mainland-bd.com
-- Location: Bagbari Kashimpur, Gazipur, Bangladesh
-
-## Acknowledgments
-
-- Fonts provided by Google Fonts
-- Icons created using SVG
-- Images sourced from the company's official materials
+- Website: [Unimas Sportswear Ltd.](https://www.unimas.com)
+- Location: Bagbari, Kashimpur, Gazipur-1700, Dhaka, Bangladesh
