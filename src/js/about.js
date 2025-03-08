@@ -1,4 +1,5 @@
 import { translations } from './translations.js';
+import { imageConfigs } from './image-config.js';
 
 export class AboutSection {
     constructor() {
@@ -24,7 +25,6 @@ export class AboutSection {
 class ImageSlideshow {
     constructor() {
         this.currentImageIndex = 0;
-        this.currentLang = 'en';
         this.intervalId = null;
         this.init();
     }
@@ -44,11 +44,11 @@ class ImageSlideshow {
             const mainImg = document.querySelector('.about-img.main-img');
             if (!mainImg) return;
 
-            this.currentImageIndex = (this.currentImageIndex + 1) % translations[this.currentLang].about.images.length;
+            this.currentImageIndex = (this.currentImageIndex + 1) % imageConfigs.about.images.length;
             
             // Create new image element
             const newImage = new Image();
-            newImage.src = translations[this.currentLang].about.images[this.currentImageIndex];
+            newImage.src = imageConfigs.about.images[this.currentImageIndex];
             
             // Add fade-out class to current image
             mainImg.classList.add('fade-out');
@@ -63,13 +63,18 @@ class ImageSlideshow {
     }
 
     updateLanguage(lang) {
-        this.currentLang = lang;
         this.currentImageIndex = 0;
         
         // Update current image immediately
         const mainImg = document.querySelector('.about-img.main-img');
+        const secondaryImg = document.querySelector('.about-img.secondary-img');
+        
         if (mainImg) {
-            mainImg.src = translations[this.currentLang].about.images[this.currentImageIndex];
+            mainImg.src = imageConfigs.about.images[this.currentImageIndex];
+        }
+        
+        if (secondaryImg) {
+            secondaryImg.src = imageConfigs.about.secondaryImage;
         }
         
         // Restart slideshow with new language

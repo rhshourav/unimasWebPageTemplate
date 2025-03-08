@@ -17,15 +17,6 @@ export const translations = {
             description: 'Unimas Sportswear Ltd. is a leading cap manufacturing factory in Bangladesh, renowned for its top-of-the-line modern facilities. Established in 1999, the company specializes in producing high-quality caps and headwear using state-of-the-art machinery. Unimas Sportswear Ltd. is committed to excellence in design, craftsmanship, and innovation, making it a trusted name in the global headwear industry.',
             watchVideo: 'Watch Video'
         },
-        about: {
-            images: [
-                'img/about-1.png',
-                'img/about-3.jpg',
-                'img/about-4.jpg',
-                'img/about-5.jpg'
-            ],
-            secondaryImage: 'img/about-2.jpg'
-        },
         features: {
             quality: {
                 title: 'Quality Product',
@@ -59,15 +50,6 @@ export const translations = {
             slogan: '与理念共成长',
             description: 'Unimas Sportswear Ltd. 是孟加拉国领先的帽子制造工厂，以其顶级现代化设施而闻名。公司成立于1999年，专门使用最先进的机械生产高质量的帽子和头饰。Unimas Sportswear Ltd. 致力于在设计、工艺和创新方面追求卓越，是全球头饰行业值得信赖的品牌。',
             watchVideo: '观看视频'
-        },
-        about: {
-            images: [
-                'img/about-1-zh.png',
-                'img/about-3-zh.jpg',
-                'img/about-4-zh.jpg',
-                'img/about-5-zh.jpg'
-            ],
-            secondaryImage: 'img/about-2.jpg'
         },
         features: {
             quality: {
