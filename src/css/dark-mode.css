@@ -122,6 +122,26 @@
     opacity: 0.8;
 }
 
+[data-theme="dark"] .footer {
+    background: var(--bg-primary);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .contact-info p {
+    color: var(--text);
+}
+
+[data-theme="dark"] .social-links a {
+    color: var(--text);
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+[data-theme="dark"] .social-links a:hover {
+    color: var(--secondary);
+    opacity: 1;
+}
+
 [data-theme="dark"] .language-switcher {
     background: rgba(227, 30, 36, 0.1);
     border: 1px solid rgba(227, 30, 36, 0.2);
