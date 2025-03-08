@@ -178,7 +178,7 @@ body {
 .since-logo {
     height: 18px;
     width: auto;
-    filter: brightness(0) invert(1);
+    filter: none;
 }
 
 .hero h1 {
@@ -563,6 +563,8 @@ body {
 
     .since-logo {
         height: 16px;
+        width: auto;
+        filter: none;
     }
 
     .hero h1 {
