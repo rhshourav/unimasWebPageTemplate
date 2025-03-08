@@ -1,12 +1,16 @@
 import { BackgroundSlider } from './js/slider.js';
 import { LanguageSwitcher } from './js/language-switcher.js';
 import { ThemeManager } from './js/theme-manager.js';
+import { AboutSection } from './js/about.js';
 
 // Initialize theme manager
 new ThemeManager();
 
 // Initialize language switcher
-new LanguageSwitcher();
+const languageSwitcher = new LanguageSwitcher();
+
+// Initialize about section
+const aboutSection = new AboutSection();
 
 // Image slider configuration
 const images = [
@@ -136,4 +140,13 @@ document.querySelectorAll('.feature-card').forEach(card => {
     card.addEventListener('mouseleave', () => {
         card.style.transform = 'translateY(0)';
     });
+});
+
+// Theme toggle functionality
+const themeToggle = document.querySelector('.theme-toggle');
+themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
 }); 

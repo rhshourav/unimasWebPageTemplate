@@ -1,10 +1,12 @@
 import { translations } from './translations.js';
 import { ImageSlideshow } from './image-slideshow.js';
+import { AboutSection } from './about.js';
 
 export class LanguageSwitcher {
     constructor() {
         this.currentLang = 'en';
         this.slideshow = new ImageSlideshow();
+        this.aboutSection = new AboutSection();
         this.init();
     }
 
@@ -83,12 +85,8 @@ export class LanguageSwitcher {
         overviewCard.querySelector('h3').textContent = translations[lang].features.overview.title;
         overviewCard.querySelector('p').textContent = translations[lang].features.overview.description;
 
-        // Update about section images
-        const secondaryAboutImg = document.querySelector('.about-img.secondary-img');
-        if (secondaryAboutImg) secondaryAboutImg.src = translations[lang].about.secondaryImage;
-        
-        // Update slideshow with new language
-        this.slideshow.updateLanguage(lang);
+        // Update about section
+        this.aboutSection.updateLanguage(lang);
 
         // Update footer
         const contactInfo = document.querySelector('.contact-info');
