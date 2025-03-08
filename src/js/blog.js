@@ -1,3 +1,7 @@
+// Import theme and language managers
+import { ThemeManager } from './theme-manager.js';
+import { LanguageSwitcher } from './language-switcher.js';
+
 // Blog Page Functionality
 document.addEventListener('DOMContentLoaded', () => {
     initBlogAnimations();
@@ -57,13 +61,13 @@ function initBlogAnimations() {
 
 function initMobileNav() {
     const hamburger = document.querySelector('.hamburger');
-    const navContainer = document.querySelector('.nav-container');
+    const navLinksContainer = document.querySelector('.nav-links-container');
     const navLinks = document.querySelectorAll('.nav-links a');
 
     function toggleMenu() {
         hamburger.classList.toggle('active');
-        navContainer.classList.toggle('active');
-        document.body.style.overflow = navContainer.classList.contains('active') ? 'hidden' : '';
+        navLinksContainer.classList.toggle('active');
+        document.body.style.overflow = navLinksContainer.classList.contains('active') ? 'hidden' : '';
     }
 
     // Hamburger click event
@@ -74,10 +78,10 @@ function initMobileNav() {
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-        const isClickInsideNav = navContainer.contains(e.target);
+        const isClickInsideNav = navLinksContainer.contains(e.target);
         const isClickOnHamburger = hamburger.contains(e.target);
         
-        if (!isClickInsideNav && !isClickOnHamburger && navContainer.classList.contains('active')) {
+        if (!isClickInsideNav && !isClickOnHamburger && navLinksContainer.classList.contains('active')) {
             toggleMenu();
         }
     });
@@ -85,14 +89,14 @@ function initMobileNav() {
     // Close menu when clicking on nav links
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            if (navContainer.classList.contains('active')) {
+            if (navLinksContainer.classList.contains('active')) {
                 toggleMenu();
             }
         });
     });
 
     // Prevent clicks inside nav container from closing the menu
-    navContainer.addEventListener('click', (e) => {
+    navLinksContainer.addEventListener('click', (e) => {
         e.stopPropagation();
     });
 }
