@@ -102,18 +102,22 @@
 }
 
 .stat-content h3 {
-    font-size: 2rem;
-    color: var(--primary);
-    margin-bottom: 0.2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    font-family: 'NumbusBold', sans-serif;
 }
 
 .stat-content h3 span {
     color: var(--secondary);
+    font-size: 2rem;
 }
 
 .stat-content p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--text);
+    opacity: 0.8;
 }
 
 [data-theme="dark"] .stat-content h3 {

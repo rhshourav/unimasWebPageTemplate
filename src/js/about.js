@@ -1,18 +1,25 @@
 import { translations } from './translations.js';
 import { imageConfigs } from './about-image-config.js';
+import { CounterAnimation } from './counter-animation.js';
 
 export class AboutSection {
     constructor() {
         this.slideshow = null;
+        this.counterAnimation = null;
         this.init();
     }
 
     init() {
         this.initSlideshow();
+        this.initCounterAnimation();
     }
 
     initSlideshow() {
         this.slideshow = new ImageSlideshow();
+    }
+
+    initCounterAnimation() {
+        this.counterAnimation = new CounterAnimation();
     }
 
     updateLanguage(lang) {
