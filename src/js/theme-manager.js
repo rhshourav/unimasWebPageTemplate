@@ -30,16 +30,7 @@ export class ThemeManager {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
         
-        // Update icon visibility
-        const sunIcon = this.themeToggle.querySelector('.sun-icon');
-        const moonIcon = this.themeToggle.querySelector('.moon-icon');
-        
-        if (theme === 'dark') {
-            sunIcon.style.display = 'block';
-            moonIcon.style.display = 'none';
-        } else {
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'block';
-        }
+        // Update theme toggle button class
+        this.themeToggle.classList.toggle('dark-mode', theme === 'dark');
     }
 } 

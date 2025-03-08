@@ -374,54 +374,18 @@ body {
 }
 
 .theme-toggle {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 50%;
+    color: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary);
-    transition: var(--transition);
+    width: 40px;
+    height: 40px;
 }
 
-.theme-toggle:hover {
-    background: rgba(0, 0, 0, 0.05);
-}
-
-.theme-toggle .sun-icon,
-.theme-toggle .moon-icon {
-    position: absolute;
-    transition: var(--transition);
-}
-
-.theme-toggle .sun-icon {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.theme-toggle .moon-icon {
-    opacity: 0;
-    transform: scale(0.5);
-}
-
-[data-theme="dark"] .theme-toggle {
-    color: var(--text);
-}
-
-[data-theme="dark"] .theme-toggle:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .theme-toggle .sun-icon {
-    opacity: 0;
-    transform: scale(0.5);
-}
-
-[data-theme="dark"] .theme-toggle .moon-icon {
-    opacity: 1;
-    transform: scale(1);
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
 }
 
 @media (max-width: 768px) {

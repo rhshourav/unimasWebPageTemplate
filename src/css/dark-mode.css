@@ -10,6 +10,47 @@
     --bg-transparent-light: rgba(31, 41, 55, 0.9);
 }
 
+/* Theme toggle button styles */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle .sun-icon,
+.theme-toggle .moon-icon {
+    display: none;
+}
+
+/* Show sun icon in dark mode */
+[data-theme="dark"] .theme-toggle .sun-icon {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+    display: none;
+}
+
+/* Show moon icon in light mode */
+[data-theme="light"] .theme-toggle .moon-icon {
+    display: block;
+}
+
+[data-theme="light"] .theme-toggle .sun-icon {
+    display: none;
+}
+
 /* Dark mode specific styles */
 [data-theme="dark"] {
     background-color: var(--bg-primary);
