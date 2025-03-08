@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initBlogAnimations();
     initThemeSupport();
     initMobileNav();
+    initLanguageSwitcher();
 });
 
 function initBlogAnimations() {
@@ -47,23 +48,84 @@ function initBlogAnimations() {
 }
 
 function initThemeSupport() {
-    // Add theme-specific styles
-    const style = document.createElement('style');
-    style.textContent = `
-        [data-theme="dark"] .blog-card {
-            background: rgba(30, 30, 30, 0.5);
+    const themeToggle = document.querySelector('.theme-toggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme === 'dark') {
+        document.body.setAttribute('data-theme', 'dark');
+    } else if (currentTheme === 'light') {
+        document.body.setAttribute('data-theme', 'light');
+    }
+
+    themeToggle?.addEventListener('click', () => {
+        let theme = 'light';
+        if (document.body.getAttribute('data-theme') !== 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            theme = 'dark';
+        } else {
+            document.body.setAttribute('data-theme', 'light');
+        }
+        localStorage.setItem('theme', theme);
+    });
+}
+
+function initLanguageSwitcher() {
+    const languageBtns = document.querySelectorAll('.language-btn');
+    const currentLang = localStorage.getItem('language') || 'en';
+
+    languageBtns.forEach(btn => {
+        if (btn.getAttribute('data-lang') === currentLang) {
+            btn.classList.add('active');
         }
 
-        [data-theme="dark"] .blog-date {
-            background: rgba(0, 0, 0, 0.9);
-        }
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            languageBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            localStorage.setItem('language', lang);
+            updateLanguage(lang);
+        });
+    });
+}
 
-        [data-theme="dark"] .decorative-wave,
-        [data-theme="dark"] .decorative-squares {
-            opacity: 0.03;
+function updateLanguage(lang) {
+    const translations = {
+        en: {
+            home: 'HOME',
+            about: 'ABOUT US',
+            projects: 'PROJECTS',
+            blog: 'BLOG',
+            contact: 'CONTACT',
+            latestNews: 'Our Latest News',
+            stayUpdated: 'Stay updated with Unimas Sportswear\'s journey and innovations'
+        },
+        zh: {
+            home: '首页',
+            about: '关于我们',
+            projects: '项目',
+            blog: '博客',
+            contact: '联系我们',
+            latestNews: '最新消息',
+            stayUpdated: '及时了解 Unimas Sportswear 的发展历程和创新'
         }
-    `;
-    document.head.appendChild(style);
+    };
+
+    const t = translations[lang];
+    
+    // Update navigation links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        const key = link.getAttribute('href').split('#')[1] || 'blog';
+        if (t[key.toLowerCase()]) {
+            link.textContent = t[key.toLowerCase()];
+        }
+    });
+
+    // Update hero section
+    const heroTitle = document.querySelector('.blog-hero h1');
+    const heroText = document.querySelector('.blog-hero p');
+    if (heroTitle) heroTitle.textContent = t.latestNews;
+    if (heroText) heroText.textContent = t.stayUpdated;
 }
 
 function initMobileNav() {
@@ -71,15 +133,16 @@ function initMobileNav() {
     const navContainer = document.querySelector('.nav-container');
     const navLinks = document.querySelectorAll('.nav-links a');
 
-    // Toggle mobile menu
     hamburger?.addEventListener('click', () => {
         hamburger.classList.toggle('active');
-        navContainer.classList.toggle('active');
+        navContainer?.classList.toggle('active');
     });
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (!hamburger?.contains(e.target) && !navContainer?.contains(e.target)) {
+        if (!hamburger?.contains(e.target) && 
+            !navContainer?.contains(e.target) && 
+            navContainer?.classList.contains('active')) {
             hamburger?.classList.remove('active');
             navContainer?.classList.remove('active');
         }
@@ -92,6 +155,12 @@ function initMobileNav() {
             navContainer?.classList.remove('active');
         });
     });
+}
+
+// Initialize language based on stored preference
+const storedLang = localStorage.getItem('language');
+if (storedLang) {
+    updateLanguage(storedLang);
 }
 
 // Add smooth scroll behavior for anchor links
