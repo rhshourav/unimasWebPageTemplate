@@ -34,11 +34,15 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 /* Company Overview */
 .company-overview {
     background: var(--accent);
+    position: relative;
+    overflow: hidden;
 }
 
 [data-theme="dark"] .company-overview {
@@ -93,6 +97,8 @@
 /* Facilities */
 .facilities {
     background: white;
+    position: relative;
+    overflow: hidden;
 }
 
 [data-theme="dark"] .facilities {
@@ -118,6 +124,8 @@
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
 }
 
 [data-theme="dark"] .facility-card {
@@ -147,9 +155,29 @@
     opacity: 0.8;
 }
 
+.facility-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 50%);
+    opacity: 0;
+    transform: scale(0.5);
+    transition: transform 0.6s, opacity 0.6s;
+}
+
+.facility-card:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
 /* Certifications */
 .certifications {
     background: var(--accent);
+    position: relative;
+    overflow: hidden;
 }
 
 [data-theme="dark"] .certifications {
@@ -177,6 +205,8 @@
     border-radius: 15px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
 }
 
 [data-theme="dark"] .certification-card {
@@ -206,9 +236,29 @@
     opacity: 0.8;
 }
 
+.certification-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 50%);
+    opacity: 0;
+    transform: scale(0.5);
+    transition: transform 0.6s, opacity 0.6s;
+}
+
+.certification-card:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
 /* Sustainability */
 .sustainability {
     background: white;
+    position: relative;
+    overflow: hidden;
 }
 
 [data-theme="dark"] .sustainability {
@@ -262,9 +312,23 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
+.sustainability::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 200px;
+    height: 200px;
+    border: 2px dashed var(--secondary);
+    border-radius: 50%;
+    opacity: 0.2;
+}
+
 /* Team */
 .team {
     background: var(--accent);
+    position: relative;
+    overflow: hidden;
 }
 
 [data-theme="dark"] .team {
@@ -292,6 +356,8 @@
     border-radius: 15px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
 }
 
 [data-theme="dark"] .team-member {
@@ -322,6 +388,108 @@
     opacity: 0.8;
 }
 
+.team::after {
+    content: '';
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, var(--secondary) 25%, transparent 25%) -10px 0,
+                linear-gradient(-45deg, var(--secondary) 25%, transparent 25%) -10px 0;
+    background-size: 20px 20px;
+    opacity: 0.1;
+}
+
+.team-member::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 50%);
+    opacity: 0;
+    transform: scale(0.5);
+    transition: transform 0.6s, opacity 0.6s;
+}
+
+.team-member:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Decorative Elements */
+.section-filler {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.dot-pattern {
+    background-image: radial-gradient(var(--text) 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.1;
+    width: 200px;
+    height: 200px;
+}
+
+.wave-pattern {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, var(--secondary) 25%, transparent 25%) -10px 0,
+                linear-gradient(-45deg, var(--secondary) 25%, transparent 25%) -10px 0;
+    background-size: 20px 20px;
+    opacity: 0.1;
+}
+
+.circle-filler {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed var(--secondary);
+    border-radius: 50%;
+    opacity: 0.2;
+}
+
+/* Add position styles for sections */
+.company-overview .dot-pattern {
+    top: 50px;
+    right: 50px;
+}
+
+.facilities .wave-pattern {
+    bottom: -150px;
+    left: -150px;
+}
+
+.certifications .circle-filler {
+    top: 100px;
+    right: 100px;
+}
+
+.sustainability .dot-pattern {
+    bottom: 50px;
+    left: 50px;
+}
+
+.team .wave-pattern {
+    top: -150px;
+    right: -150px;
+}
+
+/* Enhanced section transitions */
+[data-theme="dark"] .dot-pattern {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+}
+
+[data-theme="dark"] .wave-pattern {
+    opacity: 0.05;
+}
+
+[data-theme="dark"] .circle-filler {
+    opacity: 0.1;
+}
+
 @media (max-width: 768px) {
     .hero-section h1 {
         font-size: 2.5rem;
@@ -342,5 +510,9 @@
     .team-member img {
         width: 120px;
         height: 120px;
+    }
+
+    .section-filler {
+        display: none;
     }
 } 
