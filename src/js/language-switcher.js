@@ -1,8 +1,10 @@
 import { translations } from './translations.js';
+import { ImageSlideshow } from './image-slideshow.js';
 
 export class LanguageSwitcher {
     constructor() {
         this.currentLang = 'en';
+        this.slideshow = new ImageSlideshow();
         this.init();
     }
 
@@ -82,10 +84,11 @@ export class LanguageSwitcher {
         overviewCard.querySelector('p').textContent = translations[lang].features.overview.description;
 
         // Update about section images
-        const mainAboutImg = document.querySelector('.about-img.main-img');
         const secondaryAboutImg = document.querySelector('.about-img.secondary-img');
-        if (mainAboutImg) mainAboutImg.src = translations[lang].about.mainImage;
         if (secondaryAboutImg) secondaryAboutImg.src = translations[lang].about.secondaryImage;
+        
+        // Update slideshow with new language
+        this.slideshow.updateLanguage(lang);
 
         // Update footer
         const contactInfo = document.querySelector('.contact-info');

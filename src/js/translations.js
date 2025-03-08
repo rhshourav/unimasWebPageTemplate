@@ -18,7 +18,12 @@ export const translations = {
             watchVideo: 'Watch Video'
         },
         about: {
-            mainImage: 'img/about-1.png',
+            images: [
+                'img/about-1.png',
+                'img/about-3.jpg',
+                'img/about-4.jpg',
+                'img/about-5.jpg'
+            ],
             secondaryImage: 'img/about-2.jpg'
         },
         features: {
@@ -56,7 +61,12 @@ export const translations = {
             watchVideo: '观看视频'
         },
         about: {
-            mainImage: 'img/about-1-zh.png',
+            images: [
+                'img/about-1-zh.png',
+                'img/about-3-zh.jpg',
+                'img/about-4-zh.jpg',
+                'img/about-5-zh.jpg'
+            ],
             secondaryImage: 'img/about-2.jpg'
         },
         features: {
