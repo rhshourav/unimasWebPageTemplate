@@ -63,6 +63,12 @@ function initMobileNav() {
     const hamburger = document.querySelector('.hamburger');
     const mobileMenu = document.querySelector('.mobile-menu');
     const navLinks = document.querySelectorAll('.mobile-nav-links a');
+    const header = document.querySelector('.header');
+
+    if (!hamburger || !mobileMenu) {
+        console.error('Mobile navigation elements not found');
+        return;
+    }
 
     function toggleMenu() {
         hamburger.classList.toggle('active');
@@ -72,6 +78,7 @@ function initMobileNav() {
 
     // Hamburger click event
     hamburger.addEventListener('click', (e) => {
+        e.preventDefault();
         e.stopPropagation();
         toggleMenu();
     });
@@ -95,9 +102,38 @@ function initMobileNav() {
         });
     });
 
-    // Prevent clicks inside mobile menu from closing it
+    // Prevent menu from closing when clicking inside
     mobileMenu.addEventListener('click', (e) => {
         e.stopPropagation();
+    });
+
+    // Handle scroll behavior
+    let lastScroll = 0;
+    let scrollTimer = null;
+
+    window.addEventListener('scroll', () => {
+        if (scrollTimer !== null) {
+            clearTimeout(scrollTimer);
+        }
+
+        scrollTimer = setTimeout(() => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('scroll-up');
+                header.classList.remove('scroll-down');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+                header.classList.remove('scroll-up');
+                header.classList.add('scroll-down');
+            } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+                header.classList.remove('scroll-down');
+                header.classList.add('scroll-up');
+            }
+            lastScroll = currentScroll;
+        }, 100);
     });
 }
 
