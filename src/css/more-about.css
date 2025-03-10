@@ -511,6 +511,68 @@
     opacity: 1;
 }
 
+.company-stats {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-group {
+    padding: 1.5rem;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.stat-group:hover {
+    transform: translateY(-5px);
+}
+
+.stat-group h3 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary);
+}
+
+.stat-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stat-group li {
+    color: var(--text);
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat-group li::before {
+    content: "•";
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] .company-stats {
+    background: var(--bg-secondary);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .stat-group {
+    background: var(--bg-primary);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .hero-section h1 {
         font-size: 2.5rem;
@@ -535,5 +597,23 @@
 
     .section-filler {
         display: none;
+    }
+
+    .company-stats {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .stat-group {
+        padding: 1rem;
+    }
+
+    .stat-group h3 {
+        font-size: 1.1rem;
+    }
+
+    .stat-group li {
+        font-size: 0.9rem;
     }
 } 
