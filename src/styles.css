@@ -606,6 +606,13 @@ body {
 }
 
 /* Statistics Section */
+.facility-breakdown,
+.facility-item,
+.facility-item h4,
+.facility-item p {
+    display: none;
+}
+
 .statistics {
     padding: 4rem 2rem;
     background: var(--bg-secondary);
@@ -654,31 +661,67 @@ body {
     font-size: 0.9rem;
 }
 
-.facility-breakdown {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-    background: var(--bg-primary);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.facility-item {
+.view-more-container {
     text-align: center;
+    margin-top: 2rem;
 }
 
-.facility-item h4 {
-    color: var(--text);
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
+.view-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--secondary);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.facility-item p {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+.view-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+/* Dark Mode Styles for Statistics */
+[data-theme="dark"] .stat-item {
+    background: var(--bg-secondary);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .view-more-btn {
+    background: var(--secondary);
+    color: white;
+}
+
+[data-theme="dark"] .view-more-btn:hover {
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+/* Responsive Design for Statistics */
+@media (max-width: 768px) {
+    .statistics {
+        padding: 2rem 1rem;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .stat-item {
+        padding: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .view-more-btn {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* Dark Mode Styles */
@@ -730,27 +773,4 @@ body {
         gap: 1.5rem;
         padding: 1.5rem;
     }
-}
-
-.view-more-container {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.view-more-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
-    background: var(--secondary);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.view-more-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
 } 
