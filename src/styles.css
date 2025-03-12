@@ -14,8 +14,21 @@
     --secondary: #10B981;
     --accent: #F3F4F6;
     --text: #374151;
+    --background: #FFFFFF;
+    --card-bg: #FFFFFF;
+    --border: #E5E7EB;
     --transition: all 0.3s ease;
     --company-name-color: #ff0000;
+}
+
+[data-theme="dark"] {
+    --primary: #F3F4F6;
+    --secondary: #10B981;
+    --accent: #1F2937;
+    --text: #F9FAFB;
+    --background: #111827;
+    --card-bg: #1F2937;
+    --border: #374151;
 }
 
 * {

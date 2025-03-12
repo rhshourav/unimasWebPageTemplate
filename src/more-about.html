@@ -3,20 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unimas Sportswear Ltd. - Leading manufacturer of high-quality sportswear since 1999">
     <title>About Us - Unimas Sportswear Ltd.</title>
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/more-about.css">
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="fonts/numbusbold.otf" as="font" type="font/otf" crossorigin>
+    <!-- Defer non-critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="img/titleLogo.svg">
     <link rel="icon" type="image/png" href="img/ComlogoSmall.png">
     <link rel="apple-touch-icon" href="img/titleLogo.svg">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="css/more-about.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <nav class="nav">
             <div class="logo-container">
-                <img src="img/comLogo.svg" alt="Textilery" class="logo-img">
+                <img src="img/comLogo.svg" alt="Unimas Sportswear Logo" class="logo-img" width="40" height="40">
                 <div class="logo-text-container">
                     <span class="factory-name">Unimas Sportswear Ltd.</span>
                     <span class="logo-text">Growing With Ideas</span>
@@ -36,32 +43,42 @@
                         <button class="language-btn" data-lang="zh">中文</button>
                     </div>
                     <button class="theme-toggle" aria-label="Toggle theme">
-                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <line x1="12" y1="1" x2="12" y2="3"></line>
-                            <line x1="12" y1="21" x2="12" y2="23"></line>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                            <line x1="1" y1="12" x2="3" y2="12"></line>
-                            <line x1="21" y1="12" x2="23" y2="12"></line>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        <svg class="sun-icon" width="24" height="24" aria-hidden="true" focusable="false">
+                            <use href="#sun-icon"/>
                         </svg>
-                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        <svg class="moon-icon" width="24" height="24" aria-hidden="true" focusable="false">
+                            <use href="#moon-icon"/>
                         </svg>
                     </button>
                 </div>
             </div>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </nav>
     </header>
 
     <main class="more-about-main">
+        <!-- SVG Sprite definitions -->
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </symbol>
+            <symbol id="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </symbol>
+        </svg>
+
         <section class="hero-section">
             <div class="hero-content">
                 <h1>Our Story</h1>
@@ -117,22 +134,22 @@
                 <h2>Our Facilities</h2>
                 <div class="facilities-grid">
                     <div class="facility-card">
-                        <img src="img/facility-1.jpg" alt="Manufacturing Unit">
+                        <img src="img/facility-1.jpg" alt="Manufacturing Unit" loading="lazy" width="300" height="200">
                         <h3>Manufacturing Unit</h3>
                         <p>State-of-the-art machinery and equipment for precise production</p>
                     </div>
                     <div class="facility-card">
-                        <img src="img/facility-2.jpg" alt="Quality Control">
+                        <img src="img/facility-2.jpg" alt="Quality Control" loading="lazy" width="300" height="200">
                         <h3>Quality Control</h3>
                         <p>Rigorous testing and inspection at every stage</p>
                     </div>
                     <div class="facility-card">
-                        <img src="img/facility-3.jpg" alt="Design Studio">
+                        <img src="img/facility-3.jpg" alt="Design Studio" loading="lazy" width="300" height="200">
                         <h3>Design Studio</h3>
                         <p>Creative space for innovative design development</p>
                     </div>
                     <div class="facility-card">
-                        <img src="img/facility-4.jpg" alt="Warehouse">
+                        <img src="img/facility-4.jpg" alt="Warehouse" loading="lazy" width="300" height="200">
                         <h3>Warehouse</h3>
                         <p>Modern storage and inventory management system</p>
                     </div>
@@ -219,14 +236,15 @@
                 <p>📧 support@domain.com</p>
             </div>
             <div class="social-links">
-                <a href="#" class="social-icon">Facebook</a>
-                <a href="#" class="social-icon">Twitter</a>
-                <a href="#" class="social-icon">Instagram</a>
-                <a href="#" class="social-icon">YouTube</a>
+                <a href="#" class="social-icon" aria-label="Facebook">Facebook</a>
+                <a href="#" class="social-icon" aria-label="Twitter">Twitter</a>
+                <a href="#" class="social-icon" aria-label="Instagram">Instagram</a>
+                <a href="#" class="social-icon" aria-label="YouTube">YouTube</a>
             </div>
         </div>
     </footer>
 
-    <script type="module" src="js/more-about.js"></script>
+    <!-- Defer non-critical JavaScript -->
+    <script type="module" src="js/more-about.js" defer></script>
 </body>
 </html> 

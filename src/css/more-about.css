@@ -4,9 +4,7 @@
 
 .hero-section {
     height: 60vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/about-hero.jpg');
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/about-hero.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,19 +12,19 @@
     color: white;
 }
 
-.hero-section .hero-content {
+.hero-content {
     max-width: 800px;
     padding: 2rem;
 }
 
 .hero-section h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     margin-bottom: 1rem;
     font-family: 'NumbusBold', sans-serif;
 }
 
 .hero-section p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     opacity: 0.9;
 }
 
@@ -45,26 +43,23 @@
     overflow: hidden;
 }
 
-[data-theme="dark"] .company-overview {
-    background: var(--bg-secondary);
-}
-
 .overview-content h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
     color: var(--primary);
     margin-bottom: 2rem;
 }
 
 .overview-content p {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     color: var(--text);
     line-height: 1.8;
     margin-bottom: 3rem;
 }
 
+/* Mission Vision */
 .mission-vision {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
@@ -74,13 +69,11 @@
     border-radius: 15px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: var(--transition);
+    transition: transform 0.3s ease;
 }
 
-[data-theme="dark"] .mission,
-[data-theme="dark"] .vision {
-    background: rgba(31, 41, 55, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.mission:hover, .vision:hover {
+    transform: translateY(-5px);
 }
 
 .mission h3, .vision h3 {
@@ -511,6 +504,7 @@
     opacity: 1;
 }
 
+/* Stats */
 .company-stats {
     margin: 2rem 0;
     display: grid;
@@ -562,42 +556,61 @@
     font-weight: bold;
 }
 
-/* Dark Mode Styles */
-[data-theme="dark"] .company-stats {
-    background: var(--bg-secondary);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
+/* Dark Mode */
+[data-theme="dark"] {
+    .company-overview,
+    .team,
+    .certifications { background: var(--bg-secondary); }
 
-[data-theme="dark"] .stat-group {
-    background: var(--bg-primary);
+    .facilities,
+    .sustainability { background: var(--bg-primary); }
+
+    .mission,
+    .vision,
+    .facility-card,
+    .certification-card,
+    .team-member { 
+        background: rgba(31, 41, 55, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer {
+        background: var(--bg-primary);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-info p,
+    .social-links a { color: var(--text); }
+
+    .social-links a {
+        opacity: 0.8;
+        &:hover {
+            color: var(--secondary);
+            opacity: 1;
+        }
+    }
+
+    .dot-pattern {
+        background-image: radial-gradient(rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+    }
+
+    .wave-pattern { opacity: 0.05; }
+    .circle-filler { opacity: 0.1; }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-
-    .mission-vision {
-        grid-template-columns: 1fr;
-    }
-
-    .sustainability-content {
-        grid-template-columns: 1fr;
-    }
-
-    .container {
-        padding: 3rem 1rem;
-    }
+    .container { padding: 3rem 1rem; }
+    
+    .mission-vision,
+    .sustainability-content { grid-template-columns: 1fr; }
 
     .team-member img {
         width: 120px;
         height: 120px;
     }
 
-    .section-filler {
-        display: none;
-    }
+    .section-filler { display: none; }
 
     .company-stats {
         grid-template-columns: 1fr;
@@ -607,13 +620,32 @@
 
     .stat-group {
         padding: 1rem;
+        h3 { font-size: 1.1rem; }
+        li { font-size: 0.9rem; }
     }
+}
 
-    .stat-group h3 {
-        font-size: 1.1rem;
+/* Performance Optimizations */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
     }
+}
 
-    .stat-group li {
-        font-size: 0.9rem;
+/* Print Styles */
+@media print {
+    .hero-section { height: auto; }
+    
+    .section-filler,
+    .social-links,
+    .theme-toggle,
+    .language-switcher { display: none; }
+    
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
     }
 } 
