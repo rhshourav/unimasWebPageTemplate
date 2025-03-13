@@ -3,8 +3,6 @@ export const translations = {
         nav: {
             home: 'HOME',
             about: 'ABOUT US',
-            services: 'SERVICES',
-            projects: 'PROJECTS',
             blog: 'BLOG',
             contact: 'CONTACT'
         },
@@ -37,8 +35,6 @@ export const translations = {
         nav: {
             home: '首页',
             about: '关于我们',
-            services: '服务',
-            projects: '项目',
             blog: '博客',
             contact: '联系我们'
         },
