@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" href="img/ComlogoSmall.png">
     <link rel="apple-touch-icon" href="img/titleLogo.svg">
     <!-- Styles -->
+     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/blog.css">
     <link rel="stylesheet" href="css/language-switcher.css">
     <link rel="stylesheet" href="css/header.css">
@@ -25,19 +26,38 @@
                     <span class="brand-slogan">Growing With Ideas</span>
                 </div>
             </div>
-            <div class="nav-container">
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="more-about.html">About</a>
-                    <a href="#footer" class="scroll-to-footer">Contact</a>
-                </div>
-                <div class="nav-controls">
-                    <div class="language-switcher">
-                        <button class="language-btn" data-lang="en">EN</button>
-                        <button class="language-btn" data-lang="bn">বাং</button>
+            <div class="nav-wrapper">
+                <ul class="menu-list">
+                    <li><a href="index.html">HOME</a></li>
+                    <li>
+                        <a href="index.html#about">ABOUT US</a>
+                        <ul>
+                            <li><a href="more-about.html">More About Us</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="#footer" class="scroll-to-footer">CONTACT</a></li>
+                </ul>
+                <div class="utility-controls">
+                    <div class="lang-switch">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="zh">中文</button>
                     </div>
-                    <button class="theme-toggle" aria-label="Toggle theme">
-                        <span class="theme-toggle-icon"></span>
+                    <button class="mode-toggle" aria-label="Toggle theme">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -138,6 +158,18 @@
 
     <footer class="footer" id="footer">
         <div class="footer-content">
+            
+            <div class="footer-nav">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" class="scroll-to-top">HOME</a></li>
+                        <li><a href="index.html#about">ABOUT US</a></li>
+                        <li><a href="#blog.html">BLOG</a></li>
+                        <li><a href="https://www.mainland.com.hk/" target="_blank" rel="noopener noreferrer">MAINLAND HOLDINGS</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="map-container">
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.9024424381397!2d90.310987!3d23.956483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755dd4c8bd7c2f5%3A0x59eb9eb8552f0a7b!2sUnimas%20Sportswear%20Ltd.!5e0!3m2!1sen!2sbd!4v1709791234567!5m2!1sen!2sbd" 
@@ -149,33 +181,11 @@
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
-            <div class="footer-nav">
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Useful Links</h3>
-                    <ul>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms and Conditions</a></li>
-                        <li><a href="#disclaimer">Disclaimer</a></li>
-                        <li><a href="#support">Support</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="contact-info">
                 <h3>Contact Us</h3>
                 <p>📍 Bagbari, Kashimpur, Gazipur-1700</p>
                 <p>Dhaka, Bangladesh</p>
-                <p>📧 support@domain.com</p>
+                <p>📧 shourav.it@mainland-bd.com</p>
                 <p>📞 +880 1234-567890</p>
             </div>
             <div class="social-links">
@@ -187,8 +197,15 @@
         </div>
     </footer>
 
-    <script src="js/theme-manager.js" type="module"></script>
-    <script src="js/language-switcher.js" type="module"></script>
-    <script src="js/blog.js" type="module"></script>
+    <script type="module" src="script.js"></script>
+    <script>
+        document.querySelector('.scroll-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html> 
