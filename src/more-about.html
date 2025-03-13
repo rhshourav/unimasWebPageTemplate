@@ -8,6 +8,7 @@
     <!-- Critical CSS -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/more-about.css">
+    <link rel="stylesheet" href="css/header.css">
     <!-- Preload critical fonts -->
     <link rel="preload" href="fonts/numbusbold.otf" as="font" type="font/otf" crossorigin>
     <!-- Defer non-critical fonts -->
@@ -20,43 +21,50 @@
     <link rel="apple-touch-icon" href="img/titleLogo.svg">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="logo-container">
-                <img src="img/comLogo.svg" alt="Unimas Sportswear Logo" class="logo-img" width="40" height="40">
-                <div class="logo-text-container">
-                    <span class="factory-name">Unimas Sportswear Ltd.</span>
-                    <span class="logo-text">Growing With Ideas</span>
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="brand-container">
+                <img src="img/comLogo.svg" alt="Textilery" class="brand-logo">
+                <div class="brand-text">
+                    <span class="brand-title">Unimas Sportswear Ltd.</span>
+                    <span class="brand-slogan">Growing With Ideas</span>
                 </div>
             </div>
-            <div class="nav-container">
-                <ul class="nav-links">
-                    <li><a href="index.html#home">HOME</a></li>
-                    <li><a href="index.html#about">ABOUT US</a></li>
-                    <li><a href="index.html#projects">PROJECTS</a></li>
-                    <li><a href="index.html#blog">BLOG</a></li>
-                    <li><a href="index.html#contact">CONTACT</a></li>
+            <div class="nav-wrapper">
+                <ul class="menu-list">
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#about">ABOUT US</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="#footer" class="scroll-to-footer">CONTACT</a></li>
                 </ul>
-                <div class="nav-controls">
-                    <div class="language-switcher">
-                        <button class="language-btn active" data-lang="en">EN</button>
-                        <button class="language-btn" data-lang="zh">中文</button>
+                <div class="utility-controls">
+                    <div class="lang-switch">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="zh">中文</button>
                     </div>
-                    <button class="theme-toggle" aria-label="Toggle theme">
-                        <svg class="sun-icon" width="24" height="24" aria-hidden="true" focusable="false">
-                            <use href="#sun-icon"/>
+                    <button class="mode-toggle" aria-label="Toggle theme">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                         </svg>
-                        <svg class="moon-icon" width="24" height="24" aria-hidden="true" focusable="false">
-                            <use href="#moon-icon"/>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
                     </button>
                 </div>
             </div>
-            <button class="hamburger" aria-label="Toggle menu">
+            <div class="mobile-menu-btn">
                 <span></span>
                 <span></span>
                 <span></span>
-            </button>
+            </div>
         </nav>
     </header>
 
@@ -128,34 +136,7 @@
             </div>
         </section>
 
-        <section class="facilities">
-            <div class="section-filler wave-pattern"></div>
-            <div class="container">
-                <h2>Our Facilities</h2>
-                <div class="facilities-grid">
-                    <div class="facility-card">
-                        <img src="img/facility-1.jpg" alt="Manufacturing Unit" loading="lazy" width="300" height="200">
-                        <h3>Manufacturing Unit</h3>
-                        <p>State-of-the-art machinery and equipment for precise production</p>
-                    </div>
-                    <div class="facility-card">
-                        <img src="img/facility-2.jpg" alt="Quality Control" loading="lazy" width="300" height="200">
-                        <h3>Quality Control</h3>
-                        <p>Rigorous testing and inspection at every stage</p>
-                    </div>
-                    <div class="facility-card">
-                        <img src="img/facility-3.jpg" alt="Design Studio" loading="lazy" width="300" height="200">
-                        <h3>Design Studio</h3>
-                        <p>Creative space for innovative design development</p>
-                    </div>
-                    <div class="facility-card">
-                        <img src="img/facility-4.jpg" alt="Warehouse" loading="lazy" width="300" height="200">
-                        <h3>Warehouse</h3>
-                        <p>Modern storage and inventory management system</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <section class="certifications">
             <div class="section-filler circle-filler"></div>
@@ -228,12 +209,42 @@
         </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="footer-content">
+            
+            <div class="footer-nav">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li>
+                            <a href="#about">ABOUT US</a>
+                            <ul>
+                                <li><a href="more-about.html" class="scroll-to-top">More About Us</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#blog.html">BLOG</a></li>
+                        <li><a href="https://www.mainland.com.hk/" target="_blank" rel="noopener noreferrer">MAINLAND HOLDINGS</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.9024424381397!2d90.310987!3d23.956483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755dd4c8bd7c2f5%3A0x59eb9eb8552f0a7b!2sUnimas%20Sportswear%20Ltd.!5e0!3m2!1sen!2sbd!4v1709791234567!5m2!1sen!2sbd" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
             <div class="contact-info">
+                <h3>Contact Us</h3>
                 <p>📍 Bagbari, Kashimpur, Gazipur-1700</p>
                 <p>Dhaka, Bangladesh</p>
                 <p>📧 support@domain.com</p>
+                <p>📞 +880 1234-567890</p>
             </div>
             <div class="social-links">
                 <a href="#" class="social-icon" aria-label="Facebook">Facebook</a>
@@ -245,6 +256,15 @@
     </footer>
 
     <!-- Defer non-critical JavaScript -->
-    <script type="module" src="js/more-about.js" defer></script>
+    <script src="js/more-about.js" defer></script>
+    <script>
+        document.querySelector('.scroll-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html> 

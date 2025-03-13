@@ -11,17 +11,21 @@ export class LanguageSwitcher {
     }
 
     init() {
-        this.bindEvents();
-        this.loadSavedLanguage();
-    }
+        const languageBtns = document.querySelectorAll('.language-btn');
+        if (!languageBtns.length) return;
 
-    bindEvents() {
-        const buttons = document.querySelectorAll('.language-btn');
-        buttons.forEach(btn => {
+        languageBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const lang = btn.dataset.lang;
-                this.switchLanguage(lang);
-                this.updateActiveButton(btn);
+                localStorage.setItem('language', lang);
+                
+                // Remove active class from all buttons
+                languageBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Reload page with new language
+                location.href = `${location.pathname}?lang=${lang}`;
             });
         });
     }
