@@ -83,17 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
-    // Social login handlers
-    document.querySelector('.google').addEventListener('click', () => {
-        // Implement Google login
-        console.log('Google login clicked');
-    });
-
-    document.querySelector('.facebook').addEventListener('click', () => {
-        // Implement Facebook login
-        console.log('Facebook login clicked');
-    });
-
     // Add input focus effects
     const inputs = document.querySelectorAll('.input-group input');
     inputs.forEach(input => {

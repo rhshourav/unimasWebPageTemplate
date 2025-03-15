@@ -171,77 +171,11 @@ body {
     transform: translateY(-1px);
 }
 
-.divider {
-    text-align: center;
-    position: relative;
-    margin: 20px 0;
-}
-
-.divider::before,
-.divider::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: calc(50% - 70px);
-    height: 1px;
-    background: var(--border-color);
-}
-
-.divider::before {
-    left: 0;
-}
-
-.divider::after {
-    right: 0;
-}
-
-.divider span {
-    background: var(--white);
-    padding: 0 15px;
-    color: var(--light-text);
-    font-size: 14px;
-}
-
-.social-login {
-    display: flex;
-    gap: 15px;
-}
-
-.social-btn {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background: var(--white);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.social-btn:hover {
-    background: var(--background-color);
-}
-
-.social-btn img {
-    width: 20px;
-    height: 20px;
-}
-
-.social-btn.google {
-    color: #ea4335;
-}
-
-.social-btn.facebook {
-    color: #1877f2;
-}
-
 .signup-link {
     text-align: center;
     font-size: 14px;
     color: var(--light-text);
+    margin-top: 20px;
 }
 
 .signup-link a {
@@ -267,9 +201,5 @@ body {
 
     .login-container {
         padding: 30px 20px;
-    }
-
-    .social-login {
-        flex-direction: column;
     }
 } 
